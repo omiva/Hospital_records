@@ -1,0 +1,68 @@
+{%extends 'navi_login.html' %}
+    {% block title %}
+    DOCTORS
+    {% endblock title %}
+    {% block body %}
+
+        <style>
+body {
+    backdrop-filter: blur(7px);
+    background-image: url('/static/stock7.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+    height: 733px;
+}
+</style>
+        <div class="container">
+
+        <div class="row">
+            <div class="col-4"></div>
+
+            <div class="col-4">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <h2 class="text-center text-white bg-gradient bg-dark">Doctors Enrollment</h2>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for catagory, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show bg-primary" role="alert">
+                                {{ message }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"> &times; </span>
+                                </button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <form action="/doctors" method="post" class="jumbotron">
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="doc_name" placeholder="Doctor Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Email" value={{current_user.email}} required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="dept" placeholder="Doctor Department" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-danger btn btn-block">Book</button>
+                </form>
+
+
+            </div>
+
+            <div class="col-4"></div>
+        </div>
+
+
+        </div>
+
+    {% endblock body %}

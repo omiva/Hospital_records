@@ -1,0 +1,1 @@
+{'name': 'Yuv', 'email': 'arvind@gmail.com', 'gender': 'Male', 'disease': 'depression', 'Date': '2022-07-21', 'phone num': '123'}

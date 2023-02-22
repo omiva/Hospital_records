@@ -1,0 +1,73 @@
+{% extends 'navi.html' %}
+{% block title %}
+    LOGIN
+{% endblock title %}
+
+{% block body %}
+<style>
+body {
+    backdrop-filter: blur(7px);
+    background-image: url('/static/stock7.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+    height: 733px;
+}
+</style>
+    <div class="container mt-5">
+        <div class="row">
+            {#each row has 12 columns, so now we divide the columns#}
+            <div class="col-md-4"></div>
+            <div class="col-md-4 jumbotron bg-dark text-white">
+                <h1 class="text-center bg-gradient bg-dark text-white">Log in</h1>
+                <br>
+                {% with messages = get_flashed_messages(with_categories = true) %}
+                    {#                                {% with messages = get_flashed_messages(with_categories=true) %}#}
+                    {% if messages %}
+                        {% for catagory, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"> &times; </span>
+                                </button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <form action="/login" method="POST">
+                    {#                    FOR USERNAME INPUT#}
+                    {#                    <div class="mb-3">#}
+                    {#                        <label for="username" class="form-label">Username</label>#}
+                    {#                        <input type="text" class="form-control" id="username" name="username" required>#}
+                    {#                        aria-describedby="emailHelp"#}
+                    {#                        <div id="emailHelp" class="form-text"></div>#}
+
+
+                    {#                    FOR EMAIL INPUT#}
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        {#                        aria-describedby="emailHelp"#}
+                        {#                            <div id="emailHelp" class="form-text"><small>The email shared here will be private.</small>#}
+                        {#                            </div>#}
+
+                        {#                    FOR PASSWORD INPUT#}
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Log in</button>
+                </form>
+                <br> Not a user? <a href="/signup">signup</a>
+
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+{% endblock body %}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+{% extends 'navi.html' %}
+{% block body %}
+
+    <div class="row">
+        {#each row has 12 columns, so now we divide the columns#}
+        <div class="col-md-4">
+            <div class="card" style="width: 93rem;">
+                <img src="/static/stock5.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                </div>
+                <div class="col-md-9">
+                </div>
+
+                <div class="col-md-13">
+
+                    <div class="card border-primary mb-3" style="max-width: 100rem;">
+                        <h4 class="card-header bg-gradient bg-dark text-white" style="text-align: center">Laugh Out
+                            Loud</h4>
+                        <div class="card-body text-primary">
+                            <h5 class="card-title" style="text-align: center">Did you know?</h5>
+                            <p class="card-text" style="text-align: center">Laughing is good for the heart and can
+                                increase blood flow by 20 percent, So always look on the bright side. Being an optimist
+                                individual can help you live longer.</p>
+                        </div>
+
+                        <div class="card border-primary mb-3" style="max-width: 100rem;">
+                            <h4 class="card-header bg-gradient bg-dark text-white" style="text-align: center">Jump
+                                Around</h4>
+                            <div class="card-body text-danger">
+                                <h5 class="card-title" style="text-align: center">Did you know?</h5>
+                                <p class="card-text" style="text-align: center">Exercise will give you more energy, even
+                                    when you’re tired, So it's ist advised to have an exercise session when you feel
+                                    down or when you're nervous</p>
+                            </div>
+
+                            <div class="card border-primary mb-3" style="max-width: 100rem;">
+                                <h4 class="card-header bg-gradient bg-dark text-white" style="text-align: center">
+                                    Skin-Kin</h4>
+                                <div class="card-body text-warning">
+                                    <h5 class="card-title" style="text-align: center">Did you know?</h5>
+                                    <p class="card-text" style="text-align: center">Your skin works hard. Not only is it
+                                        the largest organ in the body, but it regulates your temperature and defends
+                                        against disease and infection.</p>
+                                </div>
+
+                                <div class="card border-primary mb-3" style="max-width: 100rem;">
+                                    <h4 class="card-header bg-gradient bg-dark text-white" style="text-align: center">
+                                        Read Books</h4>
+                                    <div class="card-body text-success">
+                                        <h5 class="card-title" style="text-align: center">Did you know?</h5>
+                                        <p class="card-text" style="text-align: center">Feeling stressed? Read. Go ahead
+                                            pick up your favorite book and get lost in it, cuz it can lower the levels
+                                            of cortisol, and other unhealthy stress hormones, by 68%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 style="text-align: center" class="text-white-50 bg-gradient bg-info">MORE INFO COMING SOON...</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
